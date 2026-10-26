@@ -1,0 +1,38 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-bottom: calc(var(--tabbar-h) + var(--sab) + 32px); }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+h1, h2, h3, h4, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+svg { display: block; }
+::selection { background: var(--accent-soft); }
+:focus-visible { outline: 2px solid var(--ink-2); outline-offset: 2px; border-radius: 6px; }
+.num, .tnum { font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* type scale */
+.t-hero { font-size: clamp(72px, 20vw, 136px); font-weight: 700; letter-spacing: -0.05em; line-height: 0.92; font-variant-numeric: tabular-nums; }
+.t-display { font-size: clamp(40px, 8vw, 72px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.02; }
+.t-title { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; }
+.t-head { font-size: 20px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+.t-body { font-size: 16px; }
+.t-cap { font-size: 13px; color: var(--ink-2); }
+.t-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2); }
+.muted { color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
