@@ -1,0 +1,15 @@
+node_modules
+web/dist
+data
+outbox
+.env
+.env.*
+!.env.example
+seed/personal.json
+screenshots
+coverage
+playwright-report
+test-results
+.git
+.github
+docs

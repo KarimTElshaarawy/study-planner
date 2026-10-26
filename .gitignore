@@ -1,0 +1,15 @@
+node_modules
+dist
+web/dist
+.env
+.env.*
+!.env.example
+data/
+outbox/
+seed/personal.json
+coverage
+test-results
+playwright-report
+*.log
+.DS_Store
+/screenshots/
