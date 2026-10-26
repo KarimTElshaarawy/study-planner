@@ -99,7 +99,7 @@ export const Today = () => {
       )}
       {empty ? (
         <div className="card">
-          <Empty variant="calendar" title="No exams yet" text="Add your first exam and Cadence plans every day up to it." action={<Link className="btn" to="/exams">Add an exam</Link>} />
+          <Empty variant="calendar" title="No exams yet" text="Add your first exam and Dayfold plans every day up to it." action={<Link className="btn" to="/exams">Add an exam</Link>} />
         </div>
       ) : allDone ? (
         <div className="card">

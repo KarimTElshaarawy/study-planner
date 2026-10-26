@@ -74,7 +74,7 @@ export interface AppBundle {
 
 export const buildApp = async (cfg: Config, opts: { now?: () => number; dbFile?: string; logger?: boolean } = {}): Promise<AppBundle> => {
   const app = Fastify({ logger: opts.logger ?? false, bodyLimit: 1_000_000, trustProxy: cfg.trustProxy });
-  const db = openDb(opts.dbFile ?? join(cfg.dataDir, 'cadence.db'));
+  const db = openDb(opts.dbFile ?? join(cfg.dataDir, 'dayfold.db'));
   const bootedAt = Date.now();
   const fake = cfg.fakeNow;
   const clock = opts.now ?? (fake !== null && !Number.isNaN(fake) ? () => fake + (Date.now() - bootedAt) : Date.now);

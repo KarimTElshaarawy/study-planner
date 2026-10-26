@@ -26,10 +26,10 @@ export const persister = createSyncStoragePersister({
       return undefined;
     }
   })(),
-  key: 'cadence-cache',
+  key: 'dayfold-cache',
 });
 
-const QUEUE_KEY = 'cadence-queue';
+const QUEUE_KEY = 'dayfold-queue';
 interface Pending {
   id: string;
   done: boolean;
@@ -67,7 +67,7 @@ export const flushQueue = async (): Promise<boolean> => {
 export const clearLocalData = async (opts: { keepQueue?: boolean } = {}): Promise<void> => {
   queryClient.removeQueries({ predicate: (q) => q.queryKey[0] !== 'session' });
   try {
-    localStorage.removeItem('cadence-cache');
+    localStorage.removeItem('dayfold-cache');
     if (!opts.keepQueue) localStorage.removeItem(QUEUE_KEY);
     if ('caches' in window) for (const k of await caches.keys()) await caches.delete(k);
   } catch {

@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="web/public/icons/icon-192.png" width="88" alt="Cadence logo" />
+<img src="web/public/icons/icon-192.png" width="88" alt="Dayfold logo" />
 
-# Cadence
+# Dayfold
 
 **Every day planned until your last exam.**<br/>
 A self-hosted study planner. It turns your exam dates into a time-blocked day, tracks what you finish and emails you the plan before you wake up.
@@ -39,7 +39,7 @@ cp .env.example .env     # set APP_PASSWORD to a long random string
 docker compose up -d
 ```
 
-Open <http://localhost:3000>. The first run shows a setup wizard. The database lives in the `cadence-data` Docker volume and, when no email provider is set, emails are written to the `cadence-outbox` volume (read them with `docker compose cp cadence:/app/outbox ./outbox`). With plain Node they live in `./data` and `./outbox`.
+Open <http://localhost:3000>. The first run shows a setup wizard. The database lives in the `dayfold-data` Docker volume and, when no email provider is set, emails are written to the `dayfold-outbox` volume (read them with `docker compose cp dayfold:/app/outbox ./outbox`). With plain Node they live in `./data` and `./outbox`.
 
 ### Plain Node (20 or newer)
 
@@ -77,7 +77,7 @@ Set in `.env` (see `.env.example`).
 | `APP_PASSWORD` | required | The login password. Use a long random value. |
 | `APP_URL` | `http://localhost:PORT` | Public URL, used by the button in the email |
 | `RESEND_API_KEY` | empty | Email through Resend |
-| `MAIL_FROM` | `Cadence <onboarding@resend.dev>` | Sender address |
+| `MAIL_FROM` | `Dayfold <onboarding@resend.dev>` | Sender address |
 | `SMTP_HOST` `SMTP_PORT` `SMTP_USER` `SMTP_PASS` `SMTP_SECURE` | empty | Email through SMTP |
 | `PORT` | `3000` | HTTP port |
 | `DATA_DIR` | `data` | SQLite database folder |

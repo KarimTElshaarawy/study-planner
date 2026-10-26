@@ -150,7 +150,7 @@ export const Settings = ({ onLogout }: { onLogout: () => void }) => {
 
   return (
     <>
-      <header className="page-head"><div><div className="t-eyebrow">Cadence</div><h1 className="t-title">Settings</h1></div></header>
+      <header className="page-head"><div><div className="t-eyebrow">Dayfold</div><h1 className="t-title">Settings</h1></div></header>
       {patch.error && <div className="banner" role="alert" style={{ marginBottom: 16 }}>{patch.error.message}</div>}
       <div className="stack">
         <div className="set-cols">
@@ -179,7 +179,7 @@ export const Settings = ({ onLogout }: { onLogout: () => void }) => {
 
         <section className="card">
           <div className="row"><h2 className="t-head grow">Commitments</h2><button className="btn secondary small" onClick={() => { setCommitment(null); setCOpen(true); }}><Plus size={16} /> Add</button></div>
-          {b.commitments.length === 0 ? <p className="t-cap" style={{ marginTop: 8 }}>Classes, shifts and training that Cadence plans around.</p> : (
+          {b.commitments.length === 0 ? <p className="t-cap" style={{ marginTop: 8 }}>Classes, shifts and training that Dayfold plans around.</p> : (
             <div className="list" style={{ marginTop: 8 }}>
               {b.commitments.map((c) => (
                 <button key={c.id} className="list-row link" style={{ textAlign: 'left' }} onClick={() => { setCommitment(c); setCOpen(true); }}>

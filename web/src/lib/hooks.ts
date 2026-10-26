@@ -18,7 +18,7 @@ export const useNow = (intervalMs = 30_000): number => {
 export type ThemePref = 'system' | 'light' | 'dark';
 export const getTheme = (): ThemePref => {
   try {
-    return (localStorage.getItem('cadence-theme') as ThemePref | null) ?? 'system';
+    return (localStorage.getItem('dayfold-theme') as ThemePref | null) ?? 'system';
   } catch {
     return 'system';
   }
@@ -28,7 +28,7 @@ export const applyTheme = (t: ThemePref): void => {
   if (t === 'system') root.removeAttribute('data-theme');
   else root.setAttribute('data-theme', t);
   try {
-    localStorage.setItem('cadence-theme', t);
+    localStorage.setItem('dayfold-theme', t);
   } catch {
     // storage unavailable
   }

@@ -12,8 +12,8 @@ const auth = async (page: import('@playwright/test').Page): Promise<void> => {
   if (!session) {
     const res = await page.request.post('/api/login', { data: { password: 'e2e-password' } });
     expect(res.ok()).toBe(true);
-    const c = (await page.context().cookies()).find((x) => x.name === 'cadence_session');
-    session = { name: 'cadence_session', value: c?.value ?? '' };
+    const c = (await page.context().cookies()).find((x) => x.name === 'dayfold_session');
+    session = { name: 'dayfold_session', value: c?.value ?? '' };
     return;
   }
   await page.context().addCookies([{ ...session, url: 'http://localhost:4020' }]);

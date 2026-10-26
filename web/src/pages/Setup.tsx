@@ -59,7 +59,7 @@ export const Setup = () => {
   return (
     <div className="center-screen top">
       <div className="wizard">
-        <div className="row"><Logo size={36} /><span className="t-eyebrow grow">Set up Cadence</span><span className="t-cap num">{step + 1} / {STEPS.length}</span></div>
+        <div className="row"><Logo size={36} /><span className="t-eyebrow grow">Set up Dayfold</span><span className="t-cap num">{step + 1} / {STEPS.length}</span></div>
         <div className="steps" aria-hidden="true">{STEPS.map((s, i) => <i key={s} className={i <= step ? 'on' : ''} />)}</div>
         <AnimatePresence mode="wait">
           <m.div key={step} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.25 }} className="stack" style={{ gap: 20 }}>
@@ -75,7 +75,7 @@ export const Setup = () => {
             {step === 1 && (
               <>
                 <h1 className="t-display">Your day.</h1>
-                <p className="muted">Cadence plans between these times. Classes, shifts and training can be added later in Settings.</p>
+                <p className="muted">Dayfold plans between these times. Classes, shifts and training can be added later in Settings.</p>
                 <div className="form-grid">
                   <TimeField label="Wake up" value={form.wakeTime} onChange={(v) => setForm({ ...form, wakeTime: v })} />
                   <TimeField label="Sleep" value={form.sleepTime} onChange={(v) => setForm({ ...form, sleepTime: v })} />

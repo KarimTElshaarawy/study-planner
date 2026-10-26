@@ -176,7 +176,7 @@ body{margin:0;padding:0;background:#F5F4F1;-webkit-text-size-adjust:100%}
 @media (max-width:480px){.num{font-size:80px}.in{padding:24px 20px 8px}.foot{padding:0 20px 24px}}
 </style></head>
 <body><div class="wrap" style="padding:16px 12px"><div class="card"><div class="in">
-<div class="brand">Cadence</div>
+<div class="brand">Dayfold</div>
 <div class="hi">${greeting}</div>
 ${hero}
 <div class="h">Yesterday</div>${recap}
@@ -187,7 +187,7 @@ ${upcoming ? `<div class="h">Coming up</div><table role="presentation" width="10
 <div class="quote">${esc(line)}</div>
 <a class="btn" href="${esc(link)}">Open today</a>
 <div style="height:28px"></div>
-</div><div class="foot">Sent by Cadence. Change the time or turn this off in Settings.</div></div></div></body></html>`;
+</div><div class="foot">Sent by Dayfold. Change the time or turn this off in Settings.</div></div></div></body></html>`;
 
   const t: string[] = [subject, '', d.name ? `${d.name}, here is ${formatDateLong(d.date)}.` : formatDateLong(d.date), ''];
   if (next) t.push(`${next.daysLeft > 0 ? next.daysLeft + (next.daysLeft === 1 ? ' day' : ' days') : next.hoursLeft + ' h'} to ${next.title}`, '');

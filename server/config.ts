@@ -36,7 +36,7 @@ export const loadConfig = (env: NodeJS.ProcessEnv = process.env): Config => {
     sessionSecret: env.SESSION_SECRET || appPassword,
     trustProxy: env.TRUST_PROXY === 'true',
     resendKey: env.RESEND_API_KEY ?? '',
-    mailFrom: env.MAIL_FROM ?? 'Cadence <onboarding@resend.dev>',
+    mailFrom: env.MAIL_FROM ?? 'Dayfold <onboarding@resend.dev>',
     smtp: smtpHost
       ? {
           host: smtpHost,

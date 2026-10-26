@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 const port = 4014;
 const base = `http://localhost:${port}`;
-const dir = mkdtempSync(join(tmpdir(), 'cadence-lh-'));
+const dir = mkdtempSync(join(tmpdir(), 'dayfold-lh-'));
 const server = spawn(process.execPath, ['--import', 'tsx', 'server/index.ts'], {
   env: { ...process.env, PORT: String(port), APP_PASSWORD: 'lh-password', DATA_DIR: dir, OUTBOX_DIR: join(dir, 'outbox'), NODE_ENV: 'production', RESEND_API_KEY: '', FAKE_NOW: '2026-10-26T03:30:00Z' },
   stdio: 'ignore',
@@ -23,7 +23,7 @@ for (let i = 0; i < 80; i++) {
 
 const json = { 'Content-Type': 'application/json' };
 const login = await fetch(`${base}/api/login`, { method: 'POST', headers: json, body: JSON.stringify({ password: 'lh-password' }) });
-const cookie = /cadence_session=[^;]+/.exec(login.headers.get('set-cookie') ?? '')?.[0] ?? '';
+const cookie = /dayfold_session=[^;]+/.exec(login.headers.get('set-cookie') ?? '')?.[0] ?? '';
 const auth = { ...json, cookie };
 await fetch(`${base}/api/settings`, { method: 'PUT', headers: auth, body: JSON.stringify({ name: 'Sam', timezone: 'Asia/Dubai', setupDone: true }) });
 await fetch(`${base}/api/seed/demo`, { method: 'POST', headers: auth, body: '{}' });

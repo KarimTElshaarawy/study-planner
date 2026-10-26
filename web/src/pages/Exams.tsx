@@ -58,7 +58,7 @@ export const Exams = () => {
         <button className="btn" onClick={() => edit(null)}><Plus size={18} /> Add</button>
       </header>
       {upcoming.length === 0 ? (
-        <div className="card"><Empty variant="calendar" title="No exams ahead" text="Add an exam or a deadline and Cadence plans every day up to it." action={<button className="btn" onClick={() => edit(null)}>Add exam</button>} /></div>
+        <div className="card"><Empty variant="calendar" title="No exams ahead" text="Add an exam or a deadline and Dayfold plans every day up to it." action={<button className="btn" onClick={() => edit(null)}>Add exam</button>} /></div>
       ) : (
         <div className="cd-grid">{upcoming.map(card)}</div>
       )}

@@ -10,7 +10,7 @@ const base = `http://localhost:${port}`;
 const password = 'screenshot-password';
 mkdirSync(out, { recursive: true });
 
-const dir = mkdtempSync(join(tmpdir(), 'cadence-shots-'));
+const dir = mkdtempSync(join(tmpdir(), 'dayfold-shots-'));
 const server: ChildProcess = spawn(process.execPath, ['--import', 'tsx', 'server/index.ts'], {
   env: { ...process.env, PORT: String(port), APP_PASSWORD: password, DATA_DIR: dir, OUTBOX_DIR: join(dir, 'outbox'), RESEND_API_KEY: '', NODE_ENV: 'production', FAKE_NOW: '2026-10-26T03:30:00Z' },
   stdio: 'ignore',
@@ -46,9 +46,9 @@ let token = '';
 const login = async (page: Page, ready = '.tl-row'): Promise<void> => {
   if (!token) {
     const res = await fetch(`${base}/api/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }) });
-    token = /cadence_session=([^;]+)/.exec(res.headers.get('set-cookie') ?? '')?.[1] ?? '';
+    token = /dayfold_session=([^;]+)/.exec(res.headers.get('set-cookie') ?? '')?.[1] ?? '';
   }
-  await page.context().addCookies([{ name: 'cadence_session', value: token, url: base }]);
+  await page.context().addCookies([{ name: 'dayfold_session', value: token, url: base }]);
   await page.goto(`${base}/today`);
   await page.waitForSelector(ready);
 };
@@ -89,7 +89,7 @@ try {
   }
   // a believable day: two sessions already done, same state in every theme and size
   {
-    const headers = { 'Content-Type': 'application/json', cookie: `cadence_session=${token}` };
+    const headers = { 'Content-Type': 'application/json', cookie: `dayfold_session=${token}` };
     const day = (await (await fetch(`${base}/api/plan/2026-10-26`, { headers })).json()) as { blocks: Array<{ id: string; kind: string }> };
     for (const b of day.blocks.filter((x) => x.kind === 'study').slice(0, 2)) {
       await fetch(`${base}/api/blocks/${encodeURIComponent(b.id)}`, { method: 'PATCH', headers, body: JSON.stringify({ done: true }) });

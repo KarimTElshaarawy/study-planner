@@ -48,7 +48,7 @@ const Hero = () => {
     <section className="ab-hero">
       <Reveal><span className="t-eyebrow">Open source study planner</span></Reveal>
       <m.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>Every day planned until your last exam.</m.h1>
-      <Reveal delay={0.1}><p className="lead">Cadence turns your exam dates into a time-blocked day, tracks what you finish, and emails you the plan before you wake up.</p></Reveal>
+      <Reveal delay={0.1}><p className="lead">Dayfold turns your exam dates into a time-blocked day, tracks what you finish, and emails you the plan before you wake up.</p></Reveal>
       <Reveal delay={0.2}>
         <div className="ab-cta">
           <a className="btn" href="#self-host">Self-host in 2 minutes</a>
@@ -150,7 +150,7 @@ export const About = () => {
     <div className="about">
       <header className="ab-nav">
         <div className="ab-nav-in">
-          <div className="brand"><Logo />Cadence</div>
+          <div className="brand"><Logo />Dayfold</div>
           <nav className="ab-links" aria-label="Page">
             <a href="#features">Features</a>
             <a href="#how">How it plans</a>
@@ -193,7 +193,7 @@ export const About = () => {
           </Reveal>
         </section>
         <footer className="ab-foot">
-          <span>Cadence. MIT licensed.</span>
+          <span>Dayfold. MIT licensed.</span>
           <a href={REPO_URL}>GitHub</a>
         </footer>
       </main>

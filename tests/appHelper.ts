@@ -16,7 +16,7 @@ export interface TestApp extends AppBundle {
 }
 
 export const makeApp = async (env: Record<string, string> = {}): Promise<TestApp> => {
-  const dir = mkdtempSync(join(tmpdir(), 'cadence-'));
+  const dir = mkdtempSync(join(tmpdir(), 'dayfold-'));
   const cfg = loadConfig({ NODE_ENV: 'test', APP_PASSWORD: PASSWORD, DATA_DIR: dir, OUTBOX_DIR: join(dir, 'outbox'), WEB_DIR: join(dir, 'none'), ...env });
   const clock = { now: NOW };
   const bundle = await buildApp(cfg, { dbFile: ':memory:', now: () => clock.now });

@@ -26,7 +26,7 @@ describe('auth', () => {
     expect(last).toBe(429);
   });
   it('rejects tampered and expired sessions', async () => {
-    const res = await t.app.inject({ method: 'GET', url: '/api/bootstrap', headers: { cookie: 'cadence_session=9999999999.abc' } });
+    const res = await t.app.inject({ method: 'GET', url: '/api/bootstrap', headers: { cookie: 'dayfold_session=9999999999.abc' } });
     expect(res.statusCode).toBe(401);
     t.clock.now = NOW + 40 * 86400_000;
     expect((await t.req('GET', '/api/bootstrap')).status).toBe(401);

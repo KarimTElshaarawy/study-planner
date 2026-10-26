@@ -1,9 +1,9 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
-const COOKIE = 'cadence_session';
+const COOKIE = 'dayfold_session';
 const MAX_AGE_S = 60 * 60 * 24 * 30;
 
-const sign = (secret: string, payload: string): string => createHmac('sha256', secret).update(`cadence-session:${payload}`).digest('base64url');
+const sign = (secret: string, payload: string): string => createHmac('sha256', secret).update(`dayfold-session:${payload}`).digest('base64url');
 
 export const safeEqual = (a: string, b: string): boolean => {
   const ha = createHmac('sha256', 'cmp').update(a).digest();

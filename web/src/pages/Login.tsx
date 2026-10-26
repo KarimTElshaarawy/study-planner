@@ -19,7 +19,7 @@ export const Login = ({ onDone }: { onDone: () => void }) => {
         <TextField label="Password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} autoFocus />
         {login.error && <div className="banner" role="alert">{login.error.message}</div>}
         <button className="btn" disabled={!password || login.isPending}>Continue</button>
-        <a className="t-cap" href="/about">What is Cadence?</a>
+        <a className="t-cap" href="/about">What is Dayfold?</a>
       </form>
     </div>
   );

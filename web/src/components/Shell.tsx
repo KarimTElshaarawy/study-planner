@@ -18,7 +18,7 @@ export const Shell = () => {
       <nav className="sidebar" aria-label="Main">
         <div className="brand">
           <Logo />
-          Cadence
+          Dayfold
         </div>
         {items.map(({ to, label, Icon }) => (
           <NavLink key={to} to={to} className="side-link">

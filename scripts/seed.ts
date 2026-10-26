@@ -22,6 +22,6 @@ if (!existsSync(file)) {
   process.exit(1);
 }
 const dir = process.env.DATA_DIR ?? 'data';
-const repo = new Repo(openDb(join(dir, 'cadence.db')), Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC');
+const repo = new Repo(openDb(join(dir, 'dayfold.db')), Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC');
 applySeed(repo, JSON.parse(readFileSync(file, 'utf8')) as SeedFile, { settings: true });
-console.log(`Loaded ${file} into ${join(dir, 'cadence.db')}. Existing exams, courses and plans were replaced.`);
+console.log(`Loaded ${file} into ${join(dir, 'dayfold.db')}. Existing exams, courses and plans were replaced.`);

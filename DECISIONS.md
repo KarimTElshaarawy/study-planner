@@ -1,10 +1,10 @@
 # Decisions
 
-Name: **Cadence** (a study planner that keeps a steady rhythm). Mark: a three-quarter ring with a dot at the open end.
+Name: **Dayfold** (a day, folded open into a plan). Chosen to be short, coined and easy to remember. A first name, "Cadence", was dropped because it collides with a well-known engineering software company. No trademark search was done beyond a web look-up; check the registers before commercial use. Mark: a three-quarter ring with a dot at the open end.
 
 ## Stack (and why)
 - **Single TypeScript package**, folders `shared/ server/ web/ tests/ scripts/`. One `package.json` keeps Docker, CI and contribution trivial; no workspace tooling to explain.
-- **Fastify + better-sqlite3**: tiny, fast, one file DB (`data/cadence.db`), synchronous API makes the planner persistence simple and transactional. Zod validates every request.
+- **Fastify + better-sqlite3**: tiny, fast, one file DB (`data/dayfold.db`), synchronous API makes the planner persistence simple and transactional. Zod validates every request.
 - **Luxon** for all timezone math. Every local date is `YYYY-MM-DD`, every local time is minutes since midnight in `settings.timezone`. Exams are stored as local date + time and interpreted in the user's timezone, so DST and travel are handled in one place.
 - **React + Vite + Motion + Lucide + TanStack Query**. Plain CSS variables with a custom token layer, no component library. Charts are hand written SVG.
 - **PWA** via a hand written service worker (app shell and hashed assets only; the API is never cached by the worker) plus a persisted TanStack Query cache and an offline queue for task toggles. Both are cleared on logout.

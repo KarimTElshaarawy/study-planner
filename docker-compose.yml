@@ -1,5 +1,5 @@
 services:
-  cadence:
+  dayfold:
     build: .
     restart: unless-stopped
     ports:
@@ -12,9 +12,9 @@ services:
       OUTBOX_DIR: /app/outbox
     volumes:
       # named volumes keep the right ownership for the non-root container user
-      - cadence-data:/app/data
-      - cadence-outbox:/app/outbox
+      - dayfold-data:/app/data
+      - dayfold-outbox:/app/outbox
 
 volumes:
-  cadence-data:
-  cadence-outbox:
+  dayfold-data:
+  dayfold-outbox:

@@ -1,5 +1,5 @@
-/* Cadence service worker: app shell offline, API always from the network (the app keeps its own query cache). */
-const VERSION = 'cadence-shell-v1';
+/* Dayfold service worker: app shell offline, API always from the network (the app keeps its own query cache). */
+const VERSION = 'dayfold-shell-v1';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

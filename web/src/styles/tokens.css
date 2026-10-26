@@ -1,4 +1,4 @@
-/* Cadence design tokens. Neutral first, one accent, muted per-course colors. */
+/* Dayfold design tokens. Neutral first, one accent, muted per-course colors. */
 :root {
   color-scheme: light;
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter Variable', Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;

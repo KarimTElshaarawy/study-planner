@@ -1,6 +1,6 @@
 {
-  "name": "Cadence",
-  "short_name": "Cadence",
+  "name": "Dayfold",
+  "short_name": "Dayfold",
   "description": "A self-hosted study planner.",
   "start_url": "/today",
   "scope": "/",
