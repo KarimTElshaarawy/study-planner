@@ -1,0 +1,20 @@
+services:
+  cadence:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    environment:
+      APP_PASSWORD: ${APP_PASSWORD:?Set APP_PASSWORD in .env}
+      DATA_DIR: /app/data
+      OUTBOX_DIR: /app/outbox
+    volumes:
+      # named volumes keep the right ownership for the non-root container user
+      - cadence-data:/app/data
+      - cadence-outbox:/app/outbox
+
+volumes:
+  cadence-data:
+  cadence-outbox:
