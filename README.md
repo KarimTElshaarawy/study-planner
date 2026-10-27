@@ -116,4 +116,4 @@ npm run lint && npm run typecheck
 npm run screenshots    # regenerates README screenshots from demo data
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [MIT License](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [GNU General Public License v3.0](LICENSE). You may use, study and modify it for free; if you distribute a modified version, you must release it under the same license with its source.

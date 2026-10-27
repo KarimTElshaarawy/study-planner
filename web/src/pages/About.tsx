@@ -127,7 +127,7 @@ const bento: Array<{ cls: string; Icon: typeof Brain; title: string; text: strin
   },
   {
     cls: 'w3', Icon: Lock, title: 'Yours alone', text: 'One user, one SQLite file, no tracking, no paid APIs. The planner is plain code, not a chatbot.',
-    visual: <div className="chips"><span className="chip">SQLite</span><span className="chip">Docker</span><span className="chip">MIT</span></div>,
+    visual: <div className="chips"><span className="chip">SQLite</span><span className="chip">Docker</span><span className="chip">GPL-3.0</span></div>,
   },
   {
     cls: 'w3', Icon: Download, title: 'Bring your dates', text: 'Add exams by hand, import a CSV, or drop in a calendar file.',
@@ -193,7 +193,7 @@ export const About = () => {
           </Reveal>
         </section>
         <footer className="ab-foot">
-          <span>Dayfold. MIT licensed.</span>
+          <span>Dayfold. Licensed under the GNU GPL v3.</span>
           <a href={REPO_URL}>GitHub</a>
         </footer>
       </main>

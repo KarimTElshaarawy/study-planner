@@ -43,3 +43,6 @@ Name: **Dayfold** (a day, folded open into a plan). Chosen to be short, coined a
 
 ## Design
 - The single accent is a refined red (light #E5322D, dark #FF5A52, text-safe variants #B3261E / #FF8A82) at the user's request. It is used for the progress ring, active tab, missed or exam emphasis and the logo dot. Buttons stay ink-coloured so small text keeps AA contrast.
+
+## License
+- GNU GPL v3.0 (chosen by the owner). Anyone may use and modify the app for free, but a distributed modified version must stay GPL with its source available. GPL does not forbid selling copies, and the copyright holder can still offer the code under other terms. Earlier commits were published under MIT; copies taken from them keep that grant.

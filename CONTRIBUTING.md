@@ -20,6 +20,7 @@ npm run test:e2e              # Playwright, builds the app and starts its own se
 
 ## Ground rules
 
+- **License.** By opening a pull request you agree that your contribution is licensed under the project's GNU GPL v3.0.
 - **No personal data.** Real exams, addresses and keys belong in `seed/personal.json` and `.env`, both gitignored. Use fictional data in tests and docs.
 - **The planner is plain code.** `shared/planner` must stay pure and deterministic (no I/O, no randomness, no network). Add a unit test, and if you change a rule, make sure `npm run simulate` still reports zero violations.
 - **Design tokens first.** Colours, radii, spacing and type live in `web/src/styles/tokens.css`. Do not hardcode values in components, and check both themes.
