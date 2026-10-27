@@ -97,6 +97,7 @@ export class Service {
       return this.view(date, this.repo.blocksOn(date), meta.state, meta.warnings, 'today');
     }
     if (date < today) {
+      this.repo.markPastMissed(today);
       const ctx = this.context();
       const meta = planDay(ctx, date, { nowMin: null });
       return this.view(date, this.repo.blocksOn(date), this.repo.blocksOn(date).length ? meta.state : 'rest', [], 'past');
