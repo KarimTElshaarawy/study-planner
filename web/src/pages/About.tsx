@@ -46,7 +46,7 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [48, 0]);
   return (
     <section className="ab-hero">
-      <Reveal><span className="t-eyebrow">Open source study planner</span></Reveal>
+      <Reveal><span className="t-eyebrow">Free study planner, source available</span></Reveal>
       <m.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>Every day planned until your last exam.</m.h1>
       <Reveal delay={0.1}><p className="lead">Dayfold turns your exam dates into a time-blocked day, tracks what you finish, and emails you the plan before you wake up.</p></Reveal>
       <Reveal delay={0.2}>
@@ -127,7 +127,7 @@ const bento: Array<{ cls: string; Icon: typeof Brain; title: string; text: strin
   },
   {
     cls: 'w3', Icon: Lock, title: 'Yours alone', text: 'One user, one SQLite file, no tracking, no paid APIs. The planner is plain code, not a chatbot.',
-    visual: <div className="chips"><span className="chip">SQLite</span><span className="chip">Docker</span><span className="chip">GPL-3.0</span></div>,
+    visual: <div className="chips"><span className="chip">SQLite</span><span className="chip">Docker</span><span className="chip">Noncommercial</span></div>,
   },
   {
     cls: 'w3', Icon: Download, title: 'Bring your dates', text: 'Add exams by hand, import a CSV, or drop in a calendar file.',
@@ -193,7 +193,7 @@ export const About = () => {
           </Reveal>
         </section>
         <footer className="ab-foot">
-          <span>Dayfold. Licensed under the GNU GPL v3.</span>
+          <span>Dayfold. Free for noncommercial use (PolyForm Noncommercial 1.0.0).</span>
           <a href={REPO_URL}>GitHub</a>
         </footer>
       </main>

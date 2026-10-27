@@ -116,4 +116,8 @@ npm run lint && npm run typecheck
 npm run screenshots    # regenerates README screenshots from demo data
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [GNU General Public License v3.0](LICENSE). You may use, study and modify it for free; if you distribute a modified version, you must release it under the same license with its source.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+Dayfold is **free to use, study and modify for any noncommercial purpose** (personal use, students, schools and other educational or charitable organizations) under the [PolyForm Noncommercial License 1.0.0](LICENSE). **Nobody may charge for it**: selling it, offering it as a paid service or using it in a commercial product needs the owner's written permission. This is a source-available license, not an OSI-approved open source license. Earlier commits were published under MIT and, for a short time, GPL-3.0; copies taken from those commits keep those terms.

@@ -2,7 +2,7 @@
   "name": "dayfold-study-planner",
   "version": "1.0.0",
   "description": "Self-hosted study planner: exam countdowns, a time-blocked daily plan and a morning email.",
-  "license": "GPL-3.0-only",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "private": true,
   "type": "module",
   "engines": {

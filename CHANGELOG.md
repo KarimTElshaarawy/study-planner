@@ -5,7 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [Unreleased]
 
 ### Changed
-- Relicensed from MIT to the GNU General Public License v3.0.
+- Relicensed from MIT (briefly GPL-3.0) to the PolyForm Noncommercial License 1.0.0: free for noncommercial use, no charging for it.
 
 ## [1.0.0] - 2026-10-26
 
