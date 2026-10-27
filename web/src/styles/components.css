@@ -109,7 +109,7 @@
 /* ---------- skeleton / toast / empty ---------- */
 .skeleton { background: linear-gradient(90deg, var(--surface-3), var(--surface-2), var(--surface-3)); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; border-radius: var(--r-md); }
 @keyframes shimmer { to { background-position: -200% 0; } }
-.toast { position: fixed; left: 50%; bottom: calc(var(--tabbar-h) + var(--sab) + 16px); transform: translateX(-50%); z-index: 60; background: var(--ink); color: var(--on-ink); padding: 12px 18px; border-radius: var(--r-pill); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-3); max-width: calc(100vw - 32px); }
+.toast { position: fixed; left: 0; right: 0; margin: 0 auto; width: fit-content; bottom: calc(var(--tabbar-h) + var(--sab) + 16px); z-index: 60; background: var(--ink); color: var(--on-ink); padding: 12px 18px; border-radius: var(--r-pill); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-3); max-width: calc(100vw - 32px); }
 @media (min-width: 960px) { .toast { bottom: 24px; } }
 .empty { display: grid; justify-items: center; text-align: center; gap: var(--s3); padding: var(--s12) var(--s6); }
 .empty p { max-width: 32ch; color: var(--ink-2); }
