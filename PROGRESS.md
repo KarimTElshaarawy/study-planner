@@ -37,6 +37,7 @@ Last known results: mobile 38 unit tests, 1 e2e, tsc and eslint clean. Web 69 un
 
 ## 6. Ordered TODO
 1. DONE 2026-10-27: re-verified both repos (mobile 39 unit + e2e; web typecheck, lint, 69 tests, simulate 0 violations, scan clean). Added course+name+topic CSV import (Settings > Data > Import courses and topics).
+1h. Commit identity: all commits are authored as the repository owner with GitHub's no-reply address; no co-author lines. History was rewritten on 2026-10-29 (backup bundles kept outside the repo).
 1b. NEXT ACTION: user re-runs Build apps and reinstalls; then ask about the Opus review.
 2. User re-runs Actions > Build apps and reinstalls Dayfold.ipa via Sideloadly.
 3. Ask the user whether to run the Opus review of the newest batch, loop until clean.
