@@ -38,17 +38,24 @@ for (const f of files) {
 }
 corpus.push(['git history', git(['log', '-p', '--all', '--no-color'])]);
 
+// Commit identities may be the owner's public GitHub handle, but only with a no-reply address (never a private email).
+const identities = [...new Set(git(['log', '--all', '--format=%an <%ae>%n%cn <%ce>']).split('\n').filter(Boolean))];
+const publicEmail = /<(\d+\+)?[\w.-]+@users\.noreply\.github\.com>$|<noreply@example\.com>$/;
+const identityHits = identities.filter((i) => !publicEmail.test(i)).map((i) => `git history: commit identity "${i.slice(0, 2)}…" does not use a no-reply address`);
+
 const hits: string[] = [];
 // the repository address is public by definition, so the owner's handle inside it is fine
 const stripRepoUrl = (t: string): string => t.replace(/github\.com\/[\w.-]+\/study-planner/g, 'github.com/OWNER/study-planner');
 for (const [name, raw] of corpus) {
-  const text = stripRepoUrl(raw);
+  // the Author/Commit header lines were checked above; they may carry the owner's public handle
+  const text = stripRepoUrl(name === 'git history' ? raw.replace(/^(Author|Commit):.*$/gm, '$1: OWNER') : raw);
   for (const [label, re] of patterns) if (re.test(text)) hits.push(`${name}: ${label}`);
   for (const [date, time] of privatePairs) {
     if (new RegExp(`${date}[^\\n]{0,80}${time}|${time}[^\\n]{0,80}${date}`).test(text)) hits.push(`${name}: private exam slot ${date.slice(0, 7)}-**`);
   }
   for (const word of forbidden) if (text.toLowerCase().includes(word.toLowerCase())) hits.push(`${name}: forbidden personal string "${word.slice(0, 2)}…"`);
 }
+hits.push(...identityHits);
 const tracked = files.filter((f) => f === '.env' || f === 'seed/personal.json' || f.startsWith('data/') || f.startsWith('outbox/'));
 for (const f of tracked) hits.push(`${f}: private file is tracked`);
 
