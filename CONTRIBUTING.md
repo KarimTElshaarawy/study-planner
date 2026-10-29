@@ -36,3 +36,7 @@ npm run test:e2e              # Playwright, builds the app and starts its own se
 | `web/` | React PWA, landing page at `/about` |
 | `tests/` | Vitest suites and the Playwright end-to-end spec |
 | `scripts/` | Simulation, seed loader, screenshots, icons |
+
+## Before you push
+
+Run `npm run lint`, `npm run typecheck`, `npm test` and `npm run scan`. The scan checks every tracked file and the whole git history for secrets and personal data, and it only accepts GitHub no-reply addresses in commit headers.
