@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Fixed
+- The toast message is centered without a transform that the animation library overrides.
+- A past day read directly now marks its missed sessions.
+
 ### Changed
 - Relicensed from MIT (briefly GPL-3.0) to the PolyForm Noncommercial License 1.0.0: free for noncommercial use, no charging for it.
 
